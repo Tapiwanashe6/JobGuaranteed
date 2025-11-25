@@ -1,4 +1,0 @@
-{
-  "buildCommand": "cd server && npm install",
-  "outputDirectory": "server"
-}
