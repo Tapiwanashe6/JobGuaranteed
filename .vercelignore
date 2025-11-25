@@ -1,0 +1,6 @@
+client
+node_modules
+.git
+.env
+.gitignore
+*.log
