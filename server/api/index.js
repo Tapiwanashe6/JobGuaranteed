@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Test route that doesn't require DB
+// Test routes that don't require DB
 app.get('/', (req, res) => {
   try {
     res.json({ message: 'API Working' });
@@ -17,8 +17,25 @@ app.get('/', (req, res) => {
   }
 });
 
-// Health check
+// Also respond when routed under /api by Vercel
+app.get('/api', (req, res) => {
+  try {
+    res.json({ message: 'API Working' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Health checks
 app.get('/health', (req, res) => {
+  try {
+    res.json({ status: 'OK' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/health', (req, res) => {
   try {
     res.json({ status: 'OK' });
   } catch (err) {
