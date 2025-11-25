@@ -9,15 +9,15 @@
   "routes": [
     {
       "src": "/api(?:/.*)?",
-      "dest": "/server/api/index.js"
+      "dest": "server/api/index.js"
     },
     {
       "src": "^/$",
-      "dest": "/server/public/index.html"
+      "dest": "server/public/index.html"
     },
     {
       "src": "^/(.*)$",
-      "dest": "/server/public/$1"
+      "dest": "server/public/$1"
     }
   ]
 }
