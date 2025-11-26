@@ -182,8 +182,9 @@ VITE_USE_REAL_API=true
 ### Frontend (.env.local)
 
 ```bash
-# Clerk authentication
-VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
+# Clerk authentication (get key from https://dashboard.clerk.com/last-active?path=api-keys)
+# Leave blank to work without authentication
+VITE_CLERK_PUBLISHABLE_KEY=pk_live_YOUR_KEY_HERE
 
 # Dual Mode
 VITE_USE_REAL_API=false                    # false or true
@@ -192,6 +193,8 @@ VITE_API_URL=http://localhost:5000/api     # Backend URL
 # Simulation
 VITE_FAKE_API_DELAY=300                    # Network delay in ms
 ```
+
+**Note:** If `VITE_CLERK_PUBLISHABLE_KEY` is not set, the app will work without authentication but you won't be able to sign in with Clerk. See `CLERK_SETUP.md` for setup instructions.
 
 ### Backend (.env)
 
